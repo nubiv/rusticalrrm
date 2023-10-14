@@ -4,6 +4,8 @@ interface RootLayoutProps {
     children: React.ReactNode
   }
 
+import "@/styles/globals.css";
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
