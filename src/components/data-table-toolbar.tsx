@@ -116,7 +116,7 @@ export function DataTableToolbar<TData>({
         options={priorities}
         />
         <Input
-          placeholder="Filter devices..."
+          placeholder="Filter servers..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("title")?.setFilterValue(event.target.value)

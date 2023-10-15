@@ -20,6 +20,10 @@ export function DashboardNav({ items }: DashboardNavProps) {
 
   return (
     <nav className="grid items-start gap-2">
+        <div className="flex mx-4 space-x-3 mb-4 items-center">
+            <Icons.home size={30} width={25}/>
+            <span className="text-md font-normal">Client List</span>
+        </div>
       {items.map((item, index) => {
         const Icon = Icons[item.icon ?? "arrowRight"]
         return (

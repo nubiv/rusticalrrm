@@ -22,6 +22,7 @@ import {
   SunMedium,
   Trash,
   Twitter,
+  Home,
   User,
   X,
   type LucideIcon,
@@ -32,6 +33,7 @@ export type Icon = LucideIcon
 export const Icons = {
   logo: Command,
   close: X,
+  home: Home,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
