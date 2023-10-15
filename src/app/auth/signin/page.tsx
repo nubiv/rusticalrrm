@@ -4,13 +4,21 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { UserAuthForm } from "@/components/auth-form"
+import { getCurrentUser } from "@/lib/session"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Authentication",
   description: "Authentication forms built using the components.",
 }
 
-export default function Page() {
+export default async function Page() {
+  const user = await getCurrentUser()
+
+  if (user) {
+    return redirect('/dashboard')
+  }
+
   return (
     <>
       <div className="container flex h-screen w-screen flex-col items-center justify-center">
