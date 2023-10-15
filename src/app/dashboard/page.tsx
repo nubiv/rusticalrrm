@@ -5,6 +5,6 @@ export default function Page() {
     return <>
     <DataTable columns={[]} data={[]}/>
     <Separator className=" my-4"/>
-    <DataTable columns={[]} data={[]}/>
+    {/* <DataTable columns={[]} data={[]}/> */}
     </>
 }

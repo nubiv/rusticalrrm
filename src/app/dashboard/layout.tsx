@@ -6,6 +6,7 @@ import { MainNav } from "@/components/main-nav"
 import { DashboardNav } from "@/components/nav"
 import { SiteFooter } from "@/components/site-footer"
 import { UserAccountNav } from "@/components/account-nav"
+import { Menubar} from "@/components/menubar"
 
 interface DashboardLayoutProps {
   children?: React.ReactNode
@@ -34,6 +35,7 @@ export default async function DashboardLayout({
           />
         </div>
       </header>
+      <Menubar/>
       <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
         <aside className="hidden w-[200px] flex-col md:flex">
           <DashboardNav items={dashboardConfig.sidebarNav} />
