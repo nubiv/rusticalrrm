@@ -4,19 +4,19 @@ export const landingConfig: LandingConfig = {
   mainNav: [
     {
       title: "Features",
-      href: "/#features",
+      href: "/",
     },
     {
       title: "Pricing",
-      href: "/pricing",
+      href: "/",
     },
     {
       title: "Blog",
-      href: "/blog",
+      href: "/",
     },
     {
       title: "Documentation",
-      href: "/docs",
+      href: "/",
     },
   ],
 }

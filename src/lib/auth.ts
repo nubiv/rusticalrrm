@@ -9,7 +9,7 @@ import {
 import GoogleProvider from "next-auth/providers/google";
 
 import { env } from "@/env.mjs";
-import { db } from "@/server/db";
+import { db } from "@/lib/db";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
