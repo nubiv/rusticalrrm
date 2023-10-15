@@ -4,3 +4,4 @@
 - [NextAuth.js](https://next-auth.js.org)
 - [Prisma](https://prisma.io)
 - [Tailwind CSS](https://tailwindcss.com)
+- [shadcn-ui](https://ui.shadcn.com/)
