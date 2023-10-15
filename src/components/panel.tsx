@@ -9,7 +9,7 @@ import { DataTable } from "./data-table"
 export function Panel() {
   return (
     <div className="resizable-container h-1/2 scroll-auto">
-        <Tabs defaultValue="summary scroll-auto">
+        <Tabs defaultValue="summary">
         <TabsList className="flex bg-inherit justify-between bg-slate-100 ">
             <TabsTrigger value="summary">Summary</TabsTrigger>
             <TabsTrigger value="checks">Checks</TabsTrigger>

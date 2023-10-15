@@ -104,7 +104,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="space-y-4 h-1/2 overflow-auto">
+    <div className="space-y-4 h-1/2 overflow-auto hidden-scrollbar">
       {/* <DataTableToolbar table={table} /> */}
       { withToolbar ? <DataTableToolbar table={table} /> : null}
       {/* <div className="rounded-md border resize-y">
