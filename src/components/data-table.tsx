@@ -65,11 +65,13 @@ const servers = [
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
+  withToolbar: boolean
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  withToolbar
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
@@ -102,8 +104,9 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="space-y-4">
-      <DataTableToolbar table={table} />
+    <div className="space-y-4 h-1/2 overflow-auto">
+      {/* <DataTableToolbar table={table} /> */}
+      { withToolbar ? <DataTableToolbar table={table} /> : null}
       {/* <div className="rounded-md border resize-y">
         <Table>
           <TableHeader>
@@ -171,7 +174,7 @@ export function DataTable<TData, TValue>({
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {( new Array(3).fill(servers).flat() as typeof servers ).map((server) => (
+                {( new Array(4).fill(servers).flat() as typeof servers ).map((server) => (
                 <TableRow key={server.id}>
                     <TableCell>{server.client}</TableCell>
                     <TableCell>{server.site}</TableCell>

@@ -89,7 +89,7 @@ export function DataTableToolbar<TData>({
   const isFiltered = table.getState().columnFilters.length > 0
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="sticky bg-slate-100 rounded-md top-0 z-10 flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         {/* {table.getColumn("status") && (
           <DataTableFacetedFilter
@@ -121,7 +121,7 @@ export function DataTableToolbar<TData>({
           onChange={(event) =>
             table.getColumn("title")?.setFilterValue(event.target.value)
           }
-          className="h-8 w-[150px] !ml-auto lg:w-[250px]"
+          className="border-none h-8 w-[150px] !ml-auto lg:w-[250px] focus:!ring-0"
         />
         {isFiltered && (
           <Button
