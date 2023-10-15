@@ -1,26 +1,29 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { signIn } from "next-auth/react"
+import * as React from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { cn } from "@/lib/utils";
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>
+type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const router = useRouter();
 
   function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault()
-    setIsLoading(true)
+    event.preventDefault();
+    setIsLoading(true);
 
     setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+      setIsLoading(false);
+      router.push("/dashboard");
+    }, 2000);
   }
 
   return (
@@ -59,7 +62,12 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading} onClick={() => void signIn('google', {callbackUrl: '/dashboard'})}>
+      <Button
+        variant="outline"
+        type="button"
+        disabled={isLoading}
+        onClick={() => void signIn("google", { callbackUrl: "/dashboard" })}
+      >
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
@@ -68,5 +76,5 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         Google
       </Button>
     </div>
-  )
+  );
 }
